@@ -48,7 +48,7 @@ namespace pryArmaniniAutoCor_SP1
         {
             foreach (clsRepuestos leer in ListarRepuestos)
             {
-                listBox1.Items.Add(leer.Nombre + " || " + leer.Codigo + " || " + leer.Precio);
+                listBox1.Items.Add(leer.Codigo + " || " + leer.Nombre + " || " + leer.Marca + " || " + leer.Precio + " || " + leer.origen);
             }
         }
 
@@ -57,7 +57,13 @@ namespace pryArmaniniAutoCor_SP1
             txtCodigo.Clear();
             txtNombre.Clear();
             txtPrecio.Clear();
+            cmbMarca.Items.Clear();
+
         }
 
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            LimpiarControles();
+        }
     }
 }
