@@ -12,6 +12,7 @@ namespace pryArmaniniAutoCor_SP1
 {
     public partial class frmRepuestos : Form
     {
+        List<clsRepuestos> ListarRepuestos = new List<clsRepuestos>();
         public frmRepuestos()
         {
             InitializeComponent();
@@ -36,8 +37,27 @@ namespace pryArmaniniAutoCor_SP1
                 objRepuestos.origen = true;
             }
 
+            ListarRepuestos.Add(objRepuestos);
+
             MessageBox.Show("Grabacion Exitosa");
-            MessageBox.Show(objRepuestos.ObtenerDatos());
+
+           LimpiarControles();
         }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            foreach (clsRepuestos leer in ListarRepuestos)
+            {
+                listBox1.Items.Add(leer.Nombre + " || " + leer.Codigo + " || " + leer.Precio);
+            }
+        }
+
+        private void LimpiarControles()
+        {
+            txtCodigo.Clear();
+            txtNombre.Clear();
+            txtPrecio.Clear();
+        }
+
     }
 }
