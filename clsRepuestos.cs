@@ -16,7 +16,19 @@ namespace pryArmaniniAutoCor_SP1
 
         public string ObtenerDatos()
         {
-            return Codigo + " " + Nombre + " " + Marca + " " + Precio + " " + origen + " ";
+            string auxOrigen;
+
+            if (origen == true)
+            {
+                auxOrigen = "Nacional";
+            }
+            else 
+            {
+                auxOrigen = "Importado";
+            }
+
+
+            return "Codigo: " + Codigo + " || Nombre: " + Nombre + " || Marca: " + Marca + " || Precio: " + Precio + " || Origen: " + origen;
         }
 
 
