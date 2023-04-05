@@ -16,5 +16,28 @@ namespace pryArmaniniAutoCor_SP1
         {
             InitializeComponent();
         }
+
+        private void btnGrabar_Click(object sender, EventArgs e)
+        {
+            clsRepuestos objRepuestos = new clsRepuestos();
+
+            objRepuestos.Nombre = txtNombre.Text;
+            objRepuestos.Precio = Convert.ToInt32(txtPrecio.Text);
+            objRepuestos.Codigo = Convert.ToInt32(txtCodigo.Text);
+            objRepuestos.Marca = cmbMarca.Text;
+
+            if (optImportado.Checked == true)
+            {
+                objRepuestos.origen = false;
+            }
+
+            if (optNacional.Checked)
+            {
+                objRepuestos.origen = true;
+            }
+
+            MessageBox.Show("Grabacion Exitosa");
+            MessageBox.Show(objRepuestos.ObtenerDatos());
+        }
     }
 }

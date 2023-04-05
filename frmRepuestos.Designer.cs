@@ -61,9 +61,9 @@
             this.mrcRepuesto.Controls.Add(this.lblNombre);
             this.mrcRepuesto.Controls.Add(this.lblCodigo);
             this.mrcRepuesto.Location = new System.Drawing.Point(25, 20);
-            this.mrcRepuesto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mrcRepuesto.Margin = new System.Windows.Forms.Padding(2);
             this.mrcRepuesto.Name = "mrcRepuesto";
-            this.mrcRepuesto.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mrcRepuesto.Padding = new System.Windows.Forms.Padding(2);
             this.mrcRepuesto.Size = new System.Drawing.Size(290, 262);
             this.mrcRepuesto.TabIndex = 0;
             this.mrcRepuesto.TabStop = false;
@@ -73,7 +73,7 @@
             // 
             this.optImportado.AutoSize = true;
             this.optImportado.Location = new System.Drawing.Point(173, 218);
-            this.optImportado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.optImportado.Margin = new System.Windows.Forms.Padding(2);
             this.optImportado.Name = "optImportado";
             this.optImportado.Size = new System.Drawing.Size(72, 17);
             this.optImportado.TabIndex = 10;
@@ -85,7 +85,7 @@
             // 
             this.optNacional.AutoSize = true;
             this.optNacional.Location = new System.Drawing.Point(95, 219);
-            this.optNacional.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.optNacional.Margin = new System.Windows.Forms.Padding(2);
             this.optNacional.Name = "optNacional";
             this.optNacional.Size = new System.Drawing.Size(67, 17);
             this.optNacional.TabIndex = 9;
@@ -96,7 +96,7 @@
             // txtPrecio
             // 
             this.txtPrecio.Location = new System.Drawing.Point(95, 175);
-            this.txtPrecio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPrecio.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(107, 20);
             this.txtPrecio.TabIndex = 8;
@@ -109,7 +109,7 @@
             "Marca B",
             "Marca C"});
             this.cmbMarca.Location = new System.Drawing.Point(95, 130);
-            this.cmbMarca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbMarca.Margin = new System.Windows.Forms.Padding(2);
             this.cmbMarca.Name = "cmbMarca";
             this.cmbMarca.Size = new System.Drawing.Size(157, 21);
             this.cmbMarca.TabIndex = 7;
@@ -117,7 +117,7 @@
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(95, 85);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(157, 20);
             this.txtNombre.TabIndex = 6;
@@ -125,7 +125,7 @@
             // txtCodigo
             // 
             this.txtCodigo.Location = new System.Drawing.Point(95, 41);
-            this.txtCodigo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(2);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(107, 20);
             this.txtCodigo.TabIndex = 5;
@@ -182,18 +182,19 @@
             // 
             // btnGrabar
             // 
-            this.btnGrabar.Location = new System.Drawing.Point(344, 35);
-            this.btnGrabar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGrabar.Location = new System.Drawing.Point(344, 37);
+            this.btnGrabar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(88, 28);
             this.btnGrabar.TabIndex = 1;
             this.btnGrabar.Text = "Grabar";
             this.btnGrabar.UseVisualStyleBackColor = true;
+            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
             // btnBorrar
             // 
             this.btnBorrar.Location = new System.Drawing.Point(344, 96);
-            this.btnBorrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBorrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(88, 27);
             this.btnBorrar.TabIndex = 2;
@@ -203,7 +204,7 @@
             // btnConsultar
             // 
             this.btnConsultar.Location = new System.Drawing.Point(344, 162);
-            this.btnConsultar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(2);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(88, 26);
             this.btnConsultar.TabIndex = 3;
@@ -213,7 +214,7 @@
             // btnSalir
             // 
             this.btnSalir.Location = new System.Drawing.Point(344, 230);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(88, 24);
             this.btnSalir.TabIndex = 4;
@@ -231,7 +232,7 @@
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnGrabar);
             this.Controls.Add(this.mrcRepuesto);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmRepuestos";
             this.Text = "AUTOCOR - Repuestos";
             this.mrcRepuesto.ResumeLayout(false);
