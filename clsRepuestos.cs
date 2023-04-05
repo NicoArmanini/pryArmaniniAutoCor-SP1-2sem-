@@ -28,7 +28,7 @@ namespace pryArmaniniAutoCor_SP1
             }
 
 
-            return "Codigo: " + Codigo + " || Nombre: " + Nombre + " || Marca: " + Marca + " || Precio: " + Precio + " || Origen: " + origen;
+            return "Codigo: " + Codigo + " || Nombre: " + Nombre + " || Marca: " + Marca + " || Precio: " + Precio + " || Origen: " + auxOrigen;
         }
 
 
