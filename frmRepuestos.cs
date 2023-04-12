@@ -41,6 +41,7 @@ namespace pryArmaniniAutoCor_SP1
             ListarRepuestos.Add(objRepuestos); // se crea para desues poder listar
 
             MessageBox.Show("Grabacion Exitosa");
+            MessageBox.Show(objRepuestos.ObtenerDatos());
 
            LimpiarControles();
         }
@@ -48,7 +49,7 @@ namespace pryArmaniniAutoCor_SP1
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             foreach (clsRepuestos leer in ListarRepuestos)
-            {
+            { 
                // listar en un listbox: listBox1.Items.Add(leer.Codigo + " || " + leer.Nombre + " || " + leer.Marca + " || " + leer.Precio + " || " + leer.origen);
             }
         }
