@@ -12,7 +12,8 @@ namespace pryArmaniniAutoCor_SP1
 {
     public partial class frmRepuestos : Form
     {
-        List<clsRepuestos> ListarRepuestos = new List<clsRepuestos>();
+        List<clsRepuestos> ListarRepuestos = new List<clsRepuestos>(); //listar, list es como si fuera un vector pero dinamico, NEW es un instanciamiento, crea un nuevo objeto en la memoria.
+
         public frmRepuestos()
         {
             InitializeComponent();
@@ -37,7 +38,7 @@ namespace pryArmaniniAutoCor_SP1
                 objRepuestos.origen = true;
             }
 
-            ListarRepuestos.Add(objRepuestos);
+            ListarRepuestos.Add(objRepuestos); // se crea para desues poder listar
 
             MessageBox.Show("Grabacion Exitosa");
 
@@ -48,7 +49,7 @@ namespace pryArmaniniAutoCor_SP1
         {
             foreach (clsRepuestos leer in ListarRepuestos)
             {
-                listBox1.Items.Add(leer.Codigo + " || " + leer.Nombre + " || " + leer.Marca + " || " + leer.Precio + " || " + leer.origen);
+               // listar en un listbox: listBox1.Items.Add(leer.Codigo + " || " + leer.Nombre + " || " + leer.Marca + " || " + leer.Precio + " || " + leer.origen);
             }
         }
 

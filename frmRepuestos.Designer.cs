@@ -44,7 +44,6 @@
             this.btnBorrar = new System.Windows.Forms.Button();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.mrcRepuesto.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -225,21 +224,12 @@
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(34, 308);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(397, 173);
-            this.listBox1.TabIndex = 5;
-            // 
             // frmRepuestos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Bisque;
-            this.ClientSize = new System.Drawing.Size(475, 523);
-            this.Controls.Add(this.listBox1);
+            this.ClientSize = new System.Drawing.Size(475, 295);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.btnBorrar);
@@ -272,7 +262,6 @@
         private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.ListBox listBox1;
     }
 }
 
