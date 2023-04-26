@@ -52,6 +52,9 @@ namespace pryArmaniniAutoCor_SP1
             { 
                // listar en un listbox: listBox1.Items.Add(leer.Codigo + " || " + leer.Nombre + " || " + leer.Marca + " || " + leer.Precio + " || " + leer.origen);
             }
+
+            frmConsulta frm = new frmConsulta();
+            frm.ShowDialog();
         }
 
         private void LimpiarControles()
@@ -66,6 +69,11 @@ namespace pryArmaniniAutoCor_SP1
         private void btnBorrar_Click(object sender, EventArgs e)
         {
             LimpiarControles();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
