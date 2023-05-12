@@ -138,6 +138,7 @@
             this.btnConsultar1.TabIndex = 4;
             this.btnConsultar1.Text = "Consultar";
             this.btnConsultar1.UseVisualStyleBackColor = true;
+            this.btnConsultar1.Click += new System.EventHandler(this.btnConsultar1_Click);
             // 
             // dgvTabla
             // 

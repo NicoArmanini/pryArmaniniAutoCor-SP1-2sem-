@@ -16,5 +16,10 @@ namespace pryArmaniniAutoCor_SP1
         {
             InitializeComponent();
         }
+
+        private void btnConsultar1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -12,8 +12,7 @@ namespace pryArmaniniAutoCor_SP1
 {
     public partial class frmRepuestos : Form
     {
-        List<clsRepuestos> ListarRepuestos = new List<clsRepuestos>(); //listar, list es como si fuera un vector pero dinamico, NEW es un instanciamiento, crea un nuevo objeto en la memoria.
-
+        private const string PATH_ARCHIVO = "Repuestos.txt";
         public frmRepuestos()
         {
             InitializeComponent();
@@ -24,35 +23,29 @@ namespace pryArmaniniAutoCor_SP1
             clsRepuestos objRepuestos = new clsRepuestos();
 
             objRepuestos.Nombre = txtNombre.Text;
-            objRepuestos.Precio = Convert.ToInt32(txtPrecio.Text);
-            objRepuestos.Codigo = Convert.ToInt32(txtCodigo.Text);
+            objRepuestos.Precio = decimal.Parse(txtPrecio.Text);
+            objRepuestos.Codigo = txtCodigo.Text;
             objRepuestos.Marca = cmbMarca.Text;
 
             if (optImportado.Checked == true)
             {
-                objRepuestos.origen = false;
+                objRepuestos.origen = "Nacional";
             }
 
             if (optNacional.Checked)
             {
-                objRepuestos.origen = true;
+                objRepuestos.origen = "Importado";
             }
-
-            ListarRepuestos.Add(objRepuestos); // se crea para desues poder listar
+            
 
             MessageBox.Show("Grabacion Exitosa");
-            MessageBox.Show(objRepuestos.ObtenerDatos());
+            //MessageBox.Show(objRepuestos.ObtenerDatos());
 
            LimpiarControles();
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            foreach (clsRepuestos leer in ListarRepuestos)
-            { 
-               // listar en un listbox: listBox1.Items.Add(leer.Codigo + " || " + leer.Nombre + " || " + leer.Marca + " || " + leer.Precio + " || " + leer.origen);
-            }
-
             frmConsulta frm = new frmConsulta();
             frm.ShowDialog();
         }
