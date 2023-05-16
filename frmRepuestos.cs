@@ -18,35 +18,64 @@ namespace pryArmaniniAutoCor_SP1
             InitializeComponent();
         }
 
+        private void Inicializar()
+        {
+            txtCodigo.Text = ""; 
+            txtNombre.Text = "";
+            txtPrecio.Text = "";
+            
+            cmbMarca.Items.Clear();
+            cmbMarca.Items.Add("Marca A");
+            cmbMarca.Items.Add("Marca B");
+            cmbMarca.Items.Add("Marca C");
+            cmbMarca.SelectedIndex = 0;
+            
+            optNacional.Checked = true;
+        }
+
         private void btnGrabar_Click(object sender, EventArgs e)
         {
-            clsRepuestos objRepuestos = new clsRepuestos();
-
-            objRepuestos.Nombre = txtNombre.Text;
-            objRepuestos.Precio = decimal.Parse(txtPrecio.Text);
-            objRepuestos.Codigo = txtCodigo.Text;
-            objRepuestos.Marca = cmbMarca.Text;
-
-            if (optImportado.Checked == true)
+            if (ValidarDatos()) // si los datos son correctos
             {
-                objRepuestos.origen = "Nacional";
+                 
+                clsRepuestos nuevoRep = CrearRepuesto();
+                
+                Archivo Repuestos = new Archivo();
+                Repuestos.NombreArchivo = PATH_ARCHIVO;
+                Repuestos.GrabarRepuesto(nuevoRep);
+                
+                Inicializar();
             }
+            else 
+            {
+                MessageBox.Show("Datos incorrectos", "Error",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
+        private clsRepuestos CrearRepuesto()
+        {
+            // se crea un nuevo objeto de tipo Repuesto
+            clsRepuestos nuevoRep = new clsRepuestos();
+            // se asignan los valores a todas sus propiedades
+            nuevoRep.Codigo = txtCodigo.Text;
+            nuevoRep.Nombre = txtNombre.Text;
+            nuevoRep.Marca = cmbMarca.SelectedItem.ToString();
+            nuevoRep.Precio = decimal.Parse(txtPrecio.Text);
             if (optNacional.Checked)
             {
-                objRepuestos.origen = "Importado";
+                nuevoRep.origen = "Nacional";
             }
-
-            MessageBox.Show("Grabacion Exitosa");
-            //MessageBox.Show(objRepuestos.ObtenerDatos());
-
-
-           LimpiarControles();
+            else
+            {
+                nuevoRep.origen = "Importado";
+            }
+            return nuevoRep; // devuelve el objeto creado con sus valores
         }
 
         private bool ValidarDatos()
         {
-            // devuelve falso si no se cumplen todas las condiciones
+            
             bool resultado = false;
             if (txtCodigo.Text != "") 
             {
@@ -74,18 +103,9 @@ namespace pryArmaniniAutoCor_SP1
              frm.ShowDialog();
         }
 
-        private void LimpiarControles()
-        {
-            txtCodigo.Clear();
-            txtNombre.Clear();
-            txtPrecio.Clear();
-            cmbMarca.Items.Clear();
-
-        }
-
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-            LimpiarControles();
+            Inicializar();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

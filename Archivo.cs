@@ -18,13 +18,13 @@ namespace pryArmaniniAutoCor_SP1
             bool resultado = false;
             if (NombreArchivo != "")
             {
-                // crea el stream en modo append
+                
                 StreamWriter sw = new StreamWriter(NombreArchivo, true);
-                // graba la linea con los valores de los campos
+               
                 sw.WriteLine(repuesto.Codigo + "," + repuesto.Nombre + "," + repuesto.Marca + "," +
                 repuesto.Precio.ToString("#.00", CultureInfo.InvariantCulture) + "," + repuesto.origen);
-                sw.Close(); // cerrar el stream
-                sw.Dispose(); // liberar los recursos
+                sw.Close(); 
+                sw.Dispose(); 
                 resultado = true;
             }
             return resultado;
@@ -37,34 +37,33 @@ namespace pryArmaniniAutoCor_SP1
             bool resultado = false;
             string Linea;
             string CodigoRepuesto;
-            // verificar que el archivo existe
+            
             if (NombreArchivo != "" && File.Exists(NombreArchivo))
             {
-                // crear el stream en modo lectura
+                
                 StreamReader sr = new StreamReader(NombreArchivo);
-                // leer hasta el final
+                
                 while (sr.EndOfStream == false)
                 {
                     Linea = sr.ReadLine(); // lee una linea completa
-                                           // el código está en el primer valor de cada línea
+                                          
                     CodigoRepuesto = Linea.Split(',')[0];
                     // comparar el código buscado con el del archivo
                     if (codigo == CodigoRepuesto)
                     {
-                        // si son iguales devuelve verdadero
+                        
                         resultado = true;
-                        break; // sale del ciclo de lectura
+                        break; 
                     }
                 }
-                sr.Close(); // cerrar el stream
-                sr.Dispose(); // liberar los recursos
+                sr.Close(); 
+                sr.Dispose(); 
             }
             return resultado;
         }
         public List<clsRepuestos> ObtenerRepuestos()
         {
-            // lee el contenido completo del archivo y lo
-            // almacena en una lista de objetos 'Repuesto'
+            
             List<clsRepuestos> Lista = new List<clsRepuestos>();
             string Linea;
             if (NombreArchivo != "" && File.Exists(NombreArchivo))
@@ -78,14 +77,13 @@ namespace pryArmaniniAutoCor_SP1
                     repuesto.Codigo = Linea.Split(',')[0];
                     repuesto.Nombre = Linea.Split(',')[1];
                     repuesto.Marca = Linea.Split(',')[2];
-                    // el valor decimal se formatea sin formatos regionales
-                    // para mantener el punto como separador decimal
+                   
                     repuesto.Precio = decimal.Parse(Linea.Split(',')[3], CultureInfo.InvariantCulture);
                     repuesto.origen = Linea.Split(',')[4];
                     Lista.Add(repuesto); // se agrega el repuesto a la lista
                 }
-                sr.Close(); // cerrar
-                sr.Dispose(); // liberar recursos
+                sr.Close(); 
+                sr.Dispose(); 
             }
             // devuelve la lista de repuestos completa
             return Lista;
@@ -93,19 +91,18 @@ namespace pryArmaniniAutoCor_SP1
 
         public List<clsRepuestos> ObtenerRepuestosOrdenados()
         {
-            // lee el contenido completo del archivo y lo
-            // almacena en una lista de objetos 'Repuesto'
+            
             List<clsRepuestos> Lista = ObtenerRepuestos();
             // convertir la lista en un arreglo con el método "ToArray()"
             clsRepuestos[] repuestosArray = Lista.ToArray();
             // ordenar el arreglo con el método de Burbuja
-            // por el campo Nombre en forma ascendente (de menor a mayor)
+           
             for (int i = 0; i < repuestosArray.Length - 1; i++)
             {
                 for (int j = 0; j < repuestosArray.Length - 1; j++)
                 {
                     // se comparan los nombres de los repuestos
-                    // usando el método 'Compare' de la clase string
+               
                     if (string.Compare(repuestosArray[j].Nombre,
                     repuestosArray[j + 1].Nombre) > 0)
                     {

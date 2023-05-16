@@ -14,12 +14,5 @@ namespace pryArmaniniAutoCor_SP1
         public decimal Precio { get; set; }
         public string origen { get; set; }
 
-        public string ObtenerDatos()
-        {
-        
-            return "Codigo: " + Codigo + " || Nombre: " + Nombre + " || Marca: " + Marca + " || Precio: " + Precio + " || Origen: " + origen;
-        }
-
-
     }
 }
