@@ -58,6 +58,7 @@
             // 
             // cmbMarca1
             // 
+            this.cmbMarca1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMarca1.FormattingEnabled = true;
             this.cmbMarca1.Items.AddRange(new object[] {
             "Marca A",
@@ -218,6 +219,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmConsulta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AUTOCOR - Consulta";
             this.mrcOrigen.ResumeLayout(false);
             this.mrcOrigen.PerformLayout();

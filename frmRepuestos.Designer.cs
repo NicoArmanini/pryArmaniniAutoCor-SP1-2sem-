@@ -235,6 +235,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmRepuestos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AUTOCOR - Repuestos";
             this.mrcRepuesto.ResumeLayout(false);
             this.mrcRepuesto.PerformLayout();
